@@ -23,7 +23,7 @@ export const Profile:FC = ():ReactElement => {
             </Avatar>
 
             {/* name */}
-            <Typography variant="h6" color="text.primary">
+            <Typography variant="h6" color="text.primary" sx={{fontWeight : 'bold'}}>
               Desmond Goldsmith
             </Typography>
             {/* welcome section */}
