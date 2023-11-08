@@ -1,7 +1,12 @@
 import React , {FC, ReactElement} from 'react'
 import {Avatar, Box , Typography} from '@mui/material'
+import PropTypes from 'prop-types'
 
-export const Profile:FC = ():ReactElement => {
+
+
+export const Profile:FC = (props):ReactElement => {
+    const {name = 'Desmond Goldsmith'} = props
+    const [firstName, lastName] = name.split(' ');
     return (
         <Box
         display="flex"
@@ -18,18 +23,22 @@ export const Profile:FC = ():ReactElement => {
               }}
             >
               <Typography variant="h4" color="text.primary">
-                DG
+            {`${firstName.charAt(0)}${lastName.charAt(0)}`}
             </Typography>
             </Avatar>
 
             {/* name */}
             <Typography variant="h6" color="text.primary" sx={{fontWeight : 'bold'}}>
-              Desmond Goldsmith
+              {`${name}`}
             </Typography>
             {/* welcome section */}
             <Typography variant="body1" color="text.primary">
-            Welcome, Desmond. This is your personal tasks manager!
+            Welcome, {`${firstName}`}. This is your personal tasks manager!
             </Typography>
             </Box>
     )
 } 
+
+Profile.propTypes = {
+    name : PropTypes.string
+}
