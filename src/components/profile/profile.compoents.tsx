@@ -2,9 +2,12 @@ import React , {FC, ReactElement} from 'react'
 import {Avatar, Box , Typography} from '@mui/material'
 import PropTypes from 'prop-types'
 
+// defining our interface
+interface Iprofile{
+    name?:string
+}
 
-
-export const Profile:FC = (props):ReactElement => {
+export const Profile:FC<Iprofile> = (props):ReactElement => {
     const {name = 'Desmond Goldsmith'} = props
     const [firstName, lastName] = name.split(' ');
     return (
