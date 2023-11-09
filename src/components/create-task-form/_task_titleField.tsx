@@ -1,7 +1,9 @@
 import React , {FC, ReactElement} from 'react'
 import {TextField} from '@mui/material'
+import {ITextfield} from './interfaces/ITextfield'
 
-export const TitleField:FC = ():ReactElement => {
+export const TitleField:FC<ITextfield> = (props):ReactElement => {
+      const {disabled = false, onChange = (e) => {console.log(e)}} = props
     return(
         <TextField
         id="title"
@@ -11,6 +13,8 @@ export const TitleField:FC = ():ReactElement => {
         size="small"
         name="title"
         fullWidth
+        disabled = {disabled}
+        onChange = {onChange}
         />
     )
 }
