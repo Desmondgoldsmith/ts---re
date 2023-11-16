@@ -1,6 +1,7 @@
 import React , {FC, ReactElement} from 'react'
 import {TextField} from '@mui/material'
 import {ITextfield} from './interfaces/ITextfield'
+import PropTypes from 'prop-types'
 
 export const TitleField:FC<ITextfield> = (props):ReactElement => {
       const {disabled = false, onChange = (e) => {console.log(e)}} = props
@@ -17,4 +18,9 @@ export const TitleField:FC<ITextfield> = (props):ReactElement => {
         onChange = {onChange}
         />
     )
+}
+
+TitleField.propTypes  = {
+  onChange : PropTypes.func,
+   disabled: PropTypes.bool
 }
