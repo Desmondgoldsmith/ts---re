@@ -1,7 +1,7 @@
 import React, {FC,ReactElement} from 'react'
 import {TextField} from '@mui/material'
 import {ITextfield} from './interfaces/ITextfield'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 export const DescriptionField:FC<ITextfield> = ({onChange = (e) => {console.log(e)}, disabled = false}):ReactElement => {
     return(
